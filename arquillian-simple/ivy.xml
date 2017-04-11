@@ -4,6 +4,10 @@
         <!ENTITY module "arquillian-simple">
         <!ENTITY version "1.0.0-SNAPSHOT">
         <!ENTITY status "integration">
+        
+        <!ENTITY was.runtime "8.5.0">
+        <!ENTITY was.appserver "8.5.5">
+        <!ENTITY was.container "1.0.0.Final">
         ]>
 <ivy-module version="2.0"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -45,12 +49,58 @@
         <artifact name="&module;" type="jar" ext="jar" conf="master"/>
         <artifact name="&module;" type="pom" ext="pom" />
         <artifact name="&module;" type="sources" ext="jar" conf="sources" m:classifier="sources"/>
-    </publications>
+    </publications> 
 
-    <dependencies>
-        <dependency org="org.apache.ant" name="ant" rev="1.9.6" force="true" conf="default"/>
-        <dependency org="org.testng" name="testng" rev="6.9.10" force="true" conf="test->default(*)"/>
-        <dependency org="org.hamcrest" name="hamcrest-all" rev="1.3"
-                    conf="test->default(*)"/>
+    <dependencies defaultconf="test->default(*)">
+   		<dependency org="org.jboss.spec" name="jboss-javaee-all-6.0" rev="3.0.3.Final" conf="provided->default(*)"/>
+   
+        <dependency rev="1.0.2" org="javax.persistence" name="persistence-api"/>
+
+        <dependency rev="1.3" org="org.hamcrest" name="hamcrest-all"/>
+        <dependency rev="1.9.5" org="org.mockito" name="mockito-all"/>
+        <dependency rev="4.12" org="junit" name="junit"/>
+
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.config" name="arquillian-config-api"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.config" name="arquillian-config-impl-base"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.core" name="arquillian-core-api"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.core" name="arquillian-core-spi"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.core" name="arquillian-core-impl-base"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.container" name="arquillian-container-spi"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.container" name="arquillian-container-impl-base"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.container" name="arquillian-container-test-api"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.container" name="arquillian-container-test-impl-base"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.container" name="arquillian-container-test-spi"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.test" name="arquillian-test-api"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.test" name="arquillian-test-impl-base"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.test" name="arquillian-test-spi"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.testenricher" name="arquillian-testenricher-cdi"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.testenricher" name="arquillian-testenricher-ejb"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.testenricher" name="arquillian-testenricher-initialcontext"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.testenricher" name="arquillian-testenricher-resource"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.protocol" name="arquillian-protocol-servlet"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.junit" name="arquillian-junit-core"/>
+        <dependency rev="1.1.8.Final" org="org.jboss.arquillian.junit" name="arquillian-junit-container"/>
+
+        <dependency rev="1.2.2" org="org.jboss.shrinkwrap" name="shrinkwrap-impl-base"/>
+        <dependency rev="1.2.2" org="org.jboss.shrinkwrap" name="shrinkwrap-api"/>
+        <dependency rev="1.2.2" org="org.jboss.shrinkwrap" name="shrinkwrap-spi"/>
+        <!--
+        <dependency rev="1.1.0-beta-1" org="org.jboss.shrinkwrap.descriptors" name="shrinkwrap-descriptors-api"/>
+        <dependency rev="1.1.0-beta-1" org="org.jboss.shrinkwrap.descriptors" name="shrinkwrap-descriptors-impl"/>
+        -->
+        <dependency org="javax.faces" name="jsf-api" rev="2.0.2-FCS"/>
+        <dependency org="org.jboss.shrinkwrap.descriptors" name="shrinkwrap-descriptors-api-javaee" rev="1.2.0-alpha-2"/>
+        <dependency org="org.jboss.shrinkwrap.descriptors" name="shrinkwrap-descriptors-impl-javaee" rev="1.2.0-alpha-2"/>
+
+        <dependency rev="1.7.21" org="org.slf4j" name="slf4j-api"/>
+        <dependency rev="1.7.21" org="org.slf4j" name="slf4j-log4j12"/>
+        <dependency rev="1.2.17" org="log4j" name="log4j"/>
+        
+        <dependency rev="&was.runtime;" org="com.ibm.websphere.runtimes" name="admin.client" />
+        <dependency rev="&was.appserver;" org="com.ibm.websphere.appserver" name="was_public"/>
+        <dependency rev="&was.runtime;" org="com.ibm.websphere.java" name="ibmjgssprovider"/>
+        <dependency rev="&was.runtime;" org="com.ibm.websphere.runtimes" name="orb"/>
+
+        <dependency rev="&was.container;" org="org.jboss.arquillian.container" name="arquillian-was-remote-8.5"/>
     </dependencies>
 </ivy-module>

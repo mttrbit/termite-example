@@ -7,5 +7,5 @@
     </import>
 
     <load-plugin name="jar"/>
-    <load-plugin name="testng"/>
+    <load-plugin name="junit"/>
 </project>
