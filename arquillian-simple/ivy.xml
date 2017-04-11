@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ivy-module [
-        <!ENTITY organisation "com.daimler.s55.pdsm">
-        <!ENTITY module "pdsm-jpf-ant-example">
+        <!ENTITY organisation "com.mttrbit.termite">
+        <!ENTITY module "arquillian-simple">
         <!ENTITY version "1.0.0-SNAPSHOT">
         <!ENTITY status "integration">
         ]>

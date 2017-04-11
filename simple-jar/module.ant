@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="pdsm-jpf-ant-example" default="package" basedir="." xmlns:unless="ant:unless" xmlns:if="ant:if">
+<project name="termite-example-simple-jar" default="package" basedir="." xmlns:unless="ant:unless" xmlns:if="ant:if">
     <import>
         <javaresource name="targets.xml">
             <classpath location="${user.home}/.termite/termite.jar"/>

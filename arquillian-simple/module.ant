@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="termite-example-arquillian-simple" default="package" basedir="." xmlns:unless="ant:unless" xmlns:if="ant:if">
+    <import>
+        <javaresource name="targets.xml">
+            <classpath location="${user.home}/.termite/termite.jar"/>
+        </javaresource>
+    </import>
+
+    <load-plugin name="jar"/>
+    <load-plugin name="testng"/>
+</project>
